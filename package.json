@@ -4,13 +4,12 @@
   "description": "crong is now watching study",
   "main": "index.js",
   "scripts": {
-    "start": "live-server --entry-file=./public/index.html",
+    "start": "live-server --mount=/:public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "ppamppamman"
   ],
   "author": "ppamppamman",
-  "license": "ISC",
-  "type": "module"
+  "license": "ISC"
 }
