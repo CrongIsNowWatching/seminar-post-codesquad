@@ -11,5 +11,6 @@
     "ppamppamman"
   ],
   "author": "ppamppamman",
-  "license": "ISC"
+  "license": "ISC",
+  "type": "module"
 }
