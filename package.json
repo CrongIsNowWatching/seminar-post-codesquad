@@ -1,0 +1,15 @@
+{
+  "name": "history-api-routing",
+  "version": "1.0.0",
+  "description": "crong is now watching study",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ppamppamman"
+  ],
+  "author": "ppamppamman",
+  "license": "ISC"
+}
