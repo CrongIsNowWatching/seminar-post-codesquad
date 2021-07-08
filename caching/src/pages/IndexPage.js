@@ -1,3 +1,5 @@
+import Image from "/components/Image.js";
+
 class IndexPage {
   // App.js에서 entry-point로 사용
 
@@ -8,41 +10,41 @@ class IndexPage {
   }
 
   setState() {
+    localStorage.removeItem("imageData");
     this.render();
   }
 
   render() {
-    /*
-    // 1.
-    const $h1 = document.createElement("h1"); // DOM
-    $h1.innerText = "해위~1";
-    this.$target.append($h1);
-
-    // 2.
-    const $h2 = `
-        <h2>해위~2</h2>
-    `; // typeof $h2 === string
-    this.$target.insertAdjacentHTML("beforeend", $h2); // DOM
-  */
-
-    // 처음 렌더할 때 갈아줘야 함
     this.$target.innerHTML = "";
 
     const $Index = `
       <h1>인덱스 입니다.</h1>
       <ul id="links"></ul>
+      <ul id="images"></ul>
     `;
 
     this.$target.insertAdjacentHTML("beforeend", $Index);
 
-    // 다음 처리
     this.didMount();
   }
 
   didMount() {
-    // ul 태그에 링크 달아주기
-
     this.$target.querySelector("ul#links").append(this.ROUTER.link("/main"));
+    const $ul = this.$target.querySelector("ul#images");
+
+    // 클릭 이벤트를 이미지에 건다
+    // 이미 url, id를 알고있으니까
+
+    $ul.addEventListener("click", (e) => {
+      const $imageData = e.target.closest(".imageData");
+      if (!$imageData) return;
+
+      const options = { id: $imageData.dataset.id, url: $imageData.dataset.url };
+
+      this.ROUTER.to("/detail", options);
+    });
+
+    new Image({ $ul });
   }
 }
 

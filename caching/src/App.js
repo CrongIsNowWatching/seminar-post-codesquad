@@ -1,3 +1,4 @@
+import DetailPage from "./pages/DetailPage.js";
 import IndexPage from "./pages/IndexPage.js";
 import MainPage from "./pages/MainPage.js";
 import Router from "./util/router.js";
@@ -10,6 +11,7 @@ class App {
     this.pages = {
       "/": IndexPage,
       "/main": MainPage,
+      "/detail": DetailPage,
     };
 
     this.setState();

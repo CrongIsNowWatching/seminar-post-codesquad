@@ -5,6 +5,7 @@ class Router {
     this.entryPoints = {
       "/": null,
       "/main": null,
+      "/detail": null,
     };
 
     window.addEventListener("popstate", (e) => {
@@ -26,9 +27,10 @@ class Router {
     return $Link;
   }
 
-  to(path) {
+  to(path, options = null) {
     window.history.pushState({ Page: path }, "", path);
-    new this.entryPoints[path]({ $target: this.$target, ROUTER: this });
+    if (!options) new this.entryPoints[path]({ $target: this.$target, ROUTER: this });
+    else new this.entryPoints[path]({ $target: this.$target, ROUTER: this, options });
   }
 }
 export default Router;
