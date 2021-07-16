@@ -24,7 +24,7 @@ app.get('/api/recommended-movies', (req, res) => {
         message: "This is an intentional error."
       });
     }
-    const response = fetch('./src/data/recommended-movies.json');
+    const response = fetch('./backend/src/data/recommended-movies.json');
     return res.status(200).send(response.result);  
   }, getRandomNumber(0, MAXIMUM_DELAY_TIME));
 });
@@ -54,7 +54,7 @@ app.get('/api/movies-by-ids', (req, res) => {
       )
     }
 
-    const response = fetch('./src/data/movies-by-ids.json');
+    const response = fetch('./backend/src/data/movies-by-ids.json');
     const result = ids.split(",").map((id) => {
       return response.result.find((movie) => {
         return movie.id === Number(id)
@@ -76,7 +76,7 @@ app.get('/api/movies/:id', (req, res) => {
     }
 
     const { id } = req.params;
-    const response = fetch('./src/data/movies.json');
+    const response = fetch('./backend/src/data/movies.json');
     
     const result = response.result.find((movie) => {
       return movie.id === Number(id);
