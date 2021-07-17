@@ -1,10 +1,10 @@
 const END_POINT = "http://localhost:3000/api";
-const PATH = "/movies/419";
+const PATH = "/movies/41";
 
 class App {
   constructor({ $target }) {
     this.$target = $target;
-    this.state = { movieLists: null };
+    this.state = { movieCard: null };
 
     this.setState({});
   }
@@ -14,22 +14,18 @@ class App {
   }
 
   async render(){
-    const response = await fetch(`${END_POINT}${PATH}`);
-    const jsonData = await response.json();
+    // const jsonData = 
 
-    const $MovieListLayout = `
+
+    const $MovieCardLayout = `
       <div class="movie-card">
         <img src="${jsonData.image}">
         <div class="movie-title">타이틀: ${jsonData.title}</div>
       </div>
     `;
 
-    this.$target.insertAdjacentHTML('beforeend', $MovieListLayout);
-
-
-
+    this.$target.insertAdjacentHTML('beforeend', $MovieCardLayout);
   }
-
 }
 
 export default App;
