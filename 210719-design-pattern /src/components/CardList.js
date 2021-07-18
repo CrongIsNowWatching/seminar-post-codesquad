@@ -1,9 +1,13 @@
 import Component from "../core/Component.js";
+import data from "../data.js";
 import Card from "./Card.js";
 export default class CardList extends Component {
 	init() {
-		const { data } = this.props;
-		this.state = { data };
+		const { lectures } = data;
+
+		this.state = {
+			data: lectures,
+		};
 	}
 
 	didMount() {
@@ -14,11 +18,12 @@ export default class CardList extends Component {
 					title: x.title,
 					imageUrl: x.imageUrl,
 					lecturer: x.lecturer,
+					eventHandler: this.introduce.bind(this),
 				})
 		);
 	}
 
-	introduceLecture(lecturer) {
-		alert(`안녕하세요 저는 ${lecturer}입니다~~~`);
+	introduce(name) {
+		alert(`🎤안녕하세요 저는 ${name}입니다~~⭐️🌈`);
 	}
 }

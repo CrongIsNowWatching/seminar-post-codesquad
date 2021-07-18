@@ -8,13 +8,23 @@ export default class Card extends Component {
 			lecturer,
 		};
 	}
+
 	render() {
 		this.$target.insertAdjacentHTML("beforeend", this.template());
+	}
+
+	setEvent() {
+		const { eventHandler } = this.props;
+		const { lecturer } = this.state;
+
+		this.addEvent("click", `#${lecturer}`, () => {
+			eventHandler(lecturer);
+		});
 	}
 	template() {
 		const { title, imageUrl, lecturer } = this.state;
 		return `
-				<li><img src = ${imageUrl} /><div>${title}</div>
+				<li id=${lecturer}><img src = ${imageUrl} /><div>${title}</div>
           <div>강사: ${lecturer}
           </div></li>`;
 	}
