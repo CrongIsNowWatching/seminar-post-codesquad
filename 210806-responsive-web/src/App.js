@@ -5,7 +5,7 @@ import theme from "./theme";
 function App() {
   return (
     <>
-      <ThemeProvider theme={{ ...theme, ...media }}>
+      <ThemeProvider theme={theme}>
         <MainPage />
       </ThemeProvider>
     </>

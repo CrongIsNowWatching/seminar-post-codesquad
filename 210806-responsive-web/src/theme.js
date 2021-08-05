@@ -1,9 +1,4 @@
-const devices = {
-  mobile: "320px",
-  tablet: "768px",
-  laptop: "1024px",
-  Desktop: "2560px",
-};
+const devices = {};
 const theme = { devices };
 
 export default theme;

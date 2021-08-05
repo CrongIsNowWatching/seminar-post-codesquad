@@ -48,63 +48,11 @@ const MainPage = () => {
   );
 };
 
-const Banner = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 4rem;
-  font-size: 2rem;
-  background-color: #08329b;
-  color: white;
-  ${({ theme }) => theme.tablet` 
-     display: none;
-  `};
-`;
-const MainLayout = styled.div`
-  display: flex;
-
-  @media only screen and (max-width: 768px) {
-    width: 100%;
-    flex-direction: column;
-    font-size: 14px;
-  }
-`;
-const ContentsLayer = styled.div`
-  width: 33.33%;
-  border: 1px solid black;
-  padding: 1rem;
-  @media only screen and (max-width: ${({ theme }) => theme.devices.laptop}) {
-    width: 100%;
-  }
-`;
-const NavLayer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #7bdb7b;
-  padding: 8px 12px;
-`;
-const NavMenu = styled.ul`
-  display: flex;
-  li {
-    padding: 8px 12px;
-  }
-  @media only screen and (max-width: ${({ theme }) => theme.devices.laptop}) {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    li {
-      width: 100%;
-      text-align: center;
-    }
-  }
-`;
-const NavIcon = styled.ul`
-  display: flex;
-  li {
-    padding: 0px 5px;
-  }
-`;
+const Banner = styled.div``;
+const MainLayout = styled.div``;
+const ContentsLayer = styled.div``;
+const NavLayer = styled.div``;
+const NavMenu = styled.ul``;
+const NavIcon = styled.ul``;
 
 export default MainPage;
