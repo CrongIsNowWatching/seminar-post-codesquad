@@ -9,6 +9,15 @@ export default class Card extends Component {
 		};
 	}
 
+	template() {
+		const { title, imageUrl, lecturer } = this.state;
+		return `
+				<li id=${lecturer}><img src = ${imageUrl} />
+				<div>${title}</div>
+          <div>강사: ${lecturer}
+          </div></li>`;
+	}
+
 	render() {
 		this.$target.insertAdjacentHTML("beforeend", this.template());
 	}
@@ -21,11 +30,5 @@ export default class Card extends Component {
 			eventHandler(lecturer);
 		});
 	}
-	template() {
-		const { title, imageUrl, lecturer } = this.state;
-		return `
-				<li id=${lecturer}><img src = ${imageUrl} /><div>${title}</div>
-          <div>강사: ${lecturer}
-          </div></li>`;
-	}
+	
 }
